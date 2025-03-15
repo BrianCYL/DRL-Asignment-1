@@ -1,0 +1,53 @@
+{
+  "os": "Linux-5.15.0-130-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.10.16",
+  "startedAt": "2025-03-15T20:56:43.820788Z",
+  "args": [
+    "--batch_size",
+    "256",
+    "--use_wandb",
+    "--n_episode",
+    "10000",
+    "--tau",
+    "1",
+    "--update_step",
+    "100"
+  ],
+  "program": "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py",
+  "codePath": "train.py",
+  "git": {
+    "remote": "git@github.com:Brian1225/DRL-Asignment-1.git",
+    "commit": "40e8f457c6a65819d5340fb230beec0df8b49dd8"
+  },
+  "email": "r12942148@ntu.edu.tw",
+  "root": "/home/chunyulin/Desktop/DRL/DRL-Asignment-1",
+  "host": "pywu-Z10PE-D16-WS",
+  "executable": "/home/chunyulin/anaconda3/envs/drl_hw1/bin/python",
+  "codePathLocal": "train.py",
+  "cpu_count": 20,
+  "cpu_count_logical": 40,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1967316500480",
+      "used": "887500546048"
+    }
+  },
+  "memory": {
+    "total": "135034515456"
+  },
+  "cpu": {
+    "count": 20,
+    "countLogical": 40
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.5"
+}
