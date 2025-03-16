@@ -12,9 +12,18 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 agent.Q.load_state_dict(torch.load("checkpoints/model_state_transform.pth", map_location=device))
 agent.Q.to(device)
 
+def state_transform(self, obs, grid_size=5):
+    binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
+    obstacle_value = int(binary_string, 2)  # Convert binary string to integer
+    state = obs[:10] + (obstacle_value,) + obs[14:]
+    state = torch.tensor(state, dtype=torch.float32)
+    state[:10] = state[:10] / grid_size
+    return state
+
 def get_action(obs):
     agent.Q.eval()
-    state = torch.tensor(obs, dtype=torch.float32, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
+    state = state_transform(obs)
+    state = torch.tensor(state, dtype=torch.float32, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
     return agent.select_action(state, 0.0, train=False)
     # TODO: Train your own agent
     # HINT: If you're using a Q-table, consider designing a custom key based on `obs` to store useful information.
