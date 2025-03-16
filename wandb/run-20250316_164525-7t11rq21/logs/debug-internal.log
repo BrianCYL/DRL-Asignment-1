@@ -1,0 +1,15 @@
+{"time":"2025-03-16T16:45:25.974828812+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/chunyulin/Desktop/DRL/DRL-Asignment-1/wandb/run-20250316_164525-7t11rq21/logs/debug-core.log"}
+{"time":"2025-03-16T16:45:26.088830022+08:00","level":"INFO","msg":"created new stream","id":"7t11rq21"}
+{"time":"2025-03-16T16:45:26.088903186+08:00","level":"INFO","msg":"stream: started","id":"7t11rq21"}
+{"time":"2025-03-16T16:45:26.08893658+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"7t11rq21"}
+{"time":"2025-03-16T16:45:26.08901033+08:00","level":"INFO","msg":"sender: started","stream_id":"7t11rq21"}
+{"time":"2025-03-16T16:45:26.089093262+08:00","level":"INFO","msg":"handler: started","stream_id":"7t11rq21"}
+{"time":"2025-03-16T16:45:26.475416062+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-16T18:22:09.697952669+08:00","level":"INFO","msg":"stream: closing","id":"7t11rq21"}
+{"time":"2025-03-16T18:22:09.698628485+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-16T18:22:09.700504535+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-16T18:22:10.533901474+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-16T18:22:10.778793577+08:00","level":"INFO","msg":"handler: closed","stream_id":"7t11rq21"}
+{"time":"2025-03-16T18:22:10.778831284+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"7t11rq21"}
+{"time":"2025-03-16T18:22:10.778843448+08:00","level":"INFO","msg":"sender: closed","stream_id":"7t11rq21"}
+{"time":"2025-03-16T18:22:10.778928483+08:00","level":"INFO","msg":"stream: closed","id":"7t11rq21"}
