@@ -29,10 +29,11 @@ class DQNAgent():
         self.target_Q.load_state_dict(self.Q.state_dict())
 
     def select_action(self, state, epsilon, train=True):
-        if train:
-            action = np.random.choice(self.action_size) if np.random.rand() < epsilon else self.Q(state).argmax().item()
-        else:
-            action = self.Q(state).detach().argmax().item()
+        with torch.no_grad():
+            if train:
+                action = np.random.choice(self.action_size) if np.random.rand() < epsilon else self.Q(state).argmax().item()
+            else:
+                action = self.Q(state).detach().argmax().item()
         # You can submit this random agent to evaluate the performance of a purely random strategy.     
         # return random.choice([0, 1, 2, 3, 4, 5]) # Choose a random action
         return action

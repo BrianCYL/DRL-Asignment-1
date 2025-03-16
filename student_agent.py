@@ -9,10 +9,11 @@ import argparse
 
 agent = DQNAgent(16, 6)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-agent.Q.load_state_dict(torch.load("checkpoints/model_256_random_grid.pth", map_location=device))
+agent.Q.load_state_dict(torch.load("checkpoints/model_256_wo_soft_update.pth", map_location=device))
 agent.Q.to(device)
 
 def get_action(obs):
+    agent.Q.eval()
     state = torch.tensor(obs, dtype=torch.float32, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
     return agent.select_action(state, 0.0, train=False)
     # TODO: Train your own agent

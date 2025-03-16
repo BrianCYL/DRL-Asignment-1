@@ -1,0 +1,23 @@
+2025-03-16 12:21:14,215 INFO    MainThread:691370 [wandb_setup.py:_flush():67] Current SDK version is 0.19.8
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_setup.py:_flush():67] Configure stats pid to 691370
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_setup.py:_flush():67] Loading settings from /home/chunyulin/.config/wandb/settings
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_setup.py:_flush():67] Loading settings from /home/chunyulin/Desktop/DRL/DRL-Asignment-1/wandb/settings
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/chunyulin/Desktop/DRL/DRL-Asignment-1/wandb/run-20250316_122114-krpuuwha/logs/debug.log
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/chunyulin/Desktop/DRL/DRL-Asignment-1/wandb/run-20250316_122114-krpuuwha/logs/debug-internal.log
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_init.py:init():761] calling init triggers
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'wandb_project': 'drl_assignment1', 'wandb_run_name': 'dqn_wo_soft_update', 'state_size': 16, 'action_size': 6, 'eps_start': 1.0, 'eps_end': 0.1, 'n_episode': 10000, 'buffer_size': 10000, 'batch_size': 256, 'update_step': 100, 'decay_rate': 0.9995, 'gamma': 0.99, 'alpha': 0.0001, 'tau': 0.3, 'use_wandb': True, '_wandb': {}}
+2025-03-16 12:21:14,216 INFO    MainThread:691370 [wandb_init.py:init():784] starting backend
+2025-03-16 12:21:14,217 INFO    MainThread:691370 [wandb_init.py:init():788] sending inform_init request
+2025-03-16 12:21:14,222 INFO    MainThread:691370 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-03-16 12:21:14,222 INFO    MainThread:691370 [wandb_init.py:init():798] backend started and connected
+2025-03-16 12:21:14,223 INFO    MainThread:691370 [wandb_init.py:init():891] updated telemetry
+2025-03-16 12:21:14,230 INFO    MainThread:691370 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-03-16 12:21:14,631 INFO    MainThread:691370 [wandb_init.py:init():990] starting run threads in backend
+2025-03-16 12:21:14,715 INFO    MainThread:691370 [wandb_run.py:_console_start():2375] atexit reg
+2025-03-16 12:21:14,715 INFO    MainThread:691370 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-16 12:21:14,715 INFO    MainThread:691370 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-16 12:21:14,716 INFO    MainThread:691370 [wandb_run.py:_redirect():2315] Redirects installed.
+2025-03-16 12:21:14,720 INFO    MainThread:691370 [wandb_init.py:init():1032] run started, returning control to user process
+2025-03-16 12:57:41,762 INFO    MsgRouterThr:691370 [mailbox.py:close():129] Closing mailbox, abandoning 1 handles.
