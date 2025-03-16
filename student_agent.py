@@ -9,7 +9,7 @@ import argparse
 
 agent = DQNAgent(16, 6)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-agent.Q.load_state_dict(torch.load("checkpoints/model_256_wo_soft_update.pth", map_location=device))
+agent.Q.load_state_dict(torch.load("checkpoints/model_256_0.999.pth", map_location=device))
 agent.Q.to(device)
 
 def get_action(obs):
