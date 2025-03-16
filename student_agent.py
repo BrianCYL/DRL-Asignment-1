@@ -7,7 +7,7 @@ import torch
 from utils import DQNAgent
 import argparse
 
-agent = DQNAgent(16, 6)
+agent = DQNAgent(13, 6)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 agent.Q.load_state_dict(torch.load("checkpoints/model_state_transform.pth", map_location=device))
 agent.Q.to(device)
