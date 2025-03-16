@@ -38,7 +38,14 @@ class DQNAgentTrainer:
         self.batch_size = args.batch_size
         self.n_episodes = args.n_episode
         self.update_step = args.update_step
-        
+    
+    def state_transform(self, obs, grid_size=5):
+        binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
+        obstacle_value = int(binary_string, 2)  # Convert binary string to integer
+        state = obs[:10] + (obstacle_value,) + obs[14:]
+        state = torch.tensor(state, dtype=torch.float32)
+        state[:10] = state[:10] / grid_size
+        return state
     
     def update(self, state, action, target):
         self.agent.Q.train()
@@ -67,8 +74,10 @@ class DQNAgentTrainer:
             # if (episode + 1) % 100 == 0:
             #     env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
             obs, _ = env.reset()
+
             with torch.no_grad():
-                state = torch.tensor(obs, dtype=torch.float32)
+                state = self.state_transform(obs, env.grid_size)
+                # state = torch.tensor(obs, dtype=torch.float32)
             done = False
             total_reward = 0          
             total_loss = 0
@@ -76,7 +85,7 @@ class DQNAgentTrainer:
             while not done:
                 action = self.agent.select_action(state.to(self.device), epsilon=self.epsilon)
                 next_obs, reward, done, _ = env.step(action)
-                next_state = torch.tensor(next_obs, dtype=torch.float32)
+                next_state = self.state_transform(next_obs, env.grid_size)
                 self.memory.push(state, action, reward, next_state, done)
                 state = next_state
                 total_reward += reward
@@ -115,13 +124,13 @@ class DQNAgentTrainer:
             
         if not os.path.exists('checkpoints/'):
             os.makedirs('checkpoints/')
-        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_{self.n_episode}_fuel_1000.pth')
+        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_state_transform.pth')
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--wandb_project', type=str, default='drl_assignment1')
     parser.add_argument('--wandb_run_name', type=str, default='dqn')
-    parser.add_argument('--state_size', type=int, default=16)
+    parser.add_argument('--state_size', type=int, default=13)
     parser.add_argument('--action_size', type=int, default=6)
     parser.add_argument('--eps_start', type=float, default=1.0)
     parser.add_argument('--eps_end', type=float, default=0.1)

@@ -1,0 +1,38 @@
+  0%|                                                                                                                               | 0/7000 [00:00<?, ?it/s]/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py:48: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(state, dtype=torch.float32).to(self.device),
+/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py:51: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(next_state, dtype=torch.float32).to(self.device),
+  3%|███                                                                                                                  | 182/7000 [01:35<59:56,  1.90it/s]
+Episode: 100, Average reward: -401.9000000000005, Avg Loss: 233.29816577613354, Epsilon: 0.9047921471137096
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 144, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 140, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 89, in train
+    loss = self.update(s, a, target)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 50, in update
+    loss.backward()
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 144, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 140, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 89, in train
+    loss = self.update(s, a, target)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 50, in update
+    loss.backward()
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/chunyulin/anaconda3/envs/drl_hw1/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

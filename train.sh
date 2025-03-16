@@ -1,4 +1,4 @@
-python train.py --wandb_run_name dqn_fuel_1000_n_7000_512  --use_wandb --batch_size 512 --n_episode 7000
+python train.py --wandb_run_name dqn_state_transform  --use_wandb --batch_size 128 --n_episode 10000
 git add .
-git commit -m "Larger batch size"
+git commit -m "Normalize taxi position and convert multihot vector to discrete value"
 git push
