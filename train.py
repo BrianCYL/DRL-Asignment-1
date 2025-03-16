@@ -54,13 +54,14 @@ class DQNAgentTrainer:
     def train(self, args):
         if args.use_wandb:
             wandb.login()
-            wandb.init(project=args.wandb_project, config=args, name=f"{args.wandb_run_name}_{args.batch_size}")
+            wandb.init(project=args.wandb_project, config=args, name=f"{args.wandb_run_name}_fuel_limit_100")
+            wandb.watch(self.agent.Q)
 
         self.agent.Q.to(self.device)
         self.agent.target_Q.to(self.device)
         reward_per_episode = [] 
         # env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
-        env = SimpleTaxiEnv(grid_size=5)
+        env = SimpleTaxiEnv(grid_size=5, fuel_limit=100)
         loss_per_episode = []
         for episode in tqdm(range(self.n_episodes)):
             # if (episode + 1) % 100 == 0:
