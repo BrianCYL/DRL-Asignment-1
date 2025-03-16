@@ -59,9 +59,11 @@ class DQNAgentTrainer:
         self.agent.Q.to(self.device)
         self.agent.target_Q.to(self.device)
         reward_per_episode = [] 
-        env = SimpleTaxiEnv()
+        env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
         loss_per_episode = []
         for episode in tqdm(range(self.n_episodes)):
+            if (episode + 1) % 100 == 0:
+                env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
             obs, _ = env.reset()
             with torch.no_grad():
                 state = torch.tensor(obs, dtype=torch.float32)
@@ -110,7 +112,7 @@ class DQNAgentTrainer:
             
         if not os.path.exists('checkpoints/'):
             os.makedirs('checkpoints/')
-        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_{self.batch_size}.pth')
+        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_{self.batch_size}_random_grid.pth')
 
 def main():
     parser = argparse.ArgumentParser()
