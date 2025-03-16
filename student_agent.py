@@ -17,7 +17,6 @@ def state_transform(self, obs, grid_size=5):
     obstacle_value = int(binary_string, 2)  # Convert binary string to integer
     state = obs[:10] + (obstacle_value,) + obs[14:]
     state = torch.tensor(state, dtype=torch.float32)
-    state[:10] = state[:10] / grid_size
     return state
 
 def get_action(obs):

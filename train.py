@@ -44,7 +44,6 @@ class DQNAgentTrainer:
         obstacle_value = int(binary_string, 2)  # Convert binary string to integer
         state = obs[:10] + (obstacle_value,) + obs[14:]
         state = torch.tensor(state, dtype=torch.float32)
-        state[:10] = state[:10] / grid_size
         return state
     
     def update(self, state, action, target):
