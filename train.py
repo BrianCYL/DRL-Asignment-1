@@ -40,9 +40,9 @@ class DQNAgentTrainer:
         self.update_step = args.update_step
     
     def state_transform(self, obs):
-        binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
-        obstacle_value = int(binary_string, 2)  # Convert binary string to integer
-        state = obs[:10] + (obstacle_value,) + obs[14:]
+        # binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
+        # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
+        # state = obs[:10] + (obstacle_value,) + obs[14:]
         state = torch.tensor(state, dtype=torch.float32)
         return state
     
@@ -98,12 +98,12 @@ class DQNAgentTrainer:
                     total_loss += loss
                         
                 if (steps + 1) % self.update_step == 0:
-                    # target_net_state_dict = self.agent.target_Q.state_dict()
-                    # Q_net_state_dict = self.agent.Q.state_dict()
-                    # for key in Q_net_state_dict:
-                    #     target_net_state_dict[key] = Q_net_state_dict[key] * self.tau + target_net_state_dict[key] * (1 - self.tau)
-                    # self.agent.target_Q.load_state_dict(target_net_state_dict)
-                    self.agent.target_Q.load_state_dict(self.agent.Q.state_dict())
+                    target_net_state_dict = self.agent.target_Q.state_dict()
+                    Q_net_state_dict = self.agent.Q.state_dict()
+                    for key in Q_net_state_dict:
+                        target_net_state_dict[key] = Q_net_state_dict[key] * self.tau + target_net_state_dict[key] * (1 - self.tau)
+                    self.agent.target_Q.load_state_dict(target_net_state_dict)
+                    # self.agent.target_Q.load_state_dict(self.agent.Q.state_dict())
 
                 steps += 1
 
@@ -129,7 +129,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--wandb_project', type=str, default='drl_assignment1')
     parser.add_argument('--wandb_run_name', type=str, default='dqn')
-    parser.add_argument('--state_size', type=int, default=13)
+    parser.add_argument('--state_size', type=int, default=16)
     parser.add_argument('--action_size', type=int, default=6)
     parser.add_argument('--eps_start', type=float, default=1.0)
     parser.add_argument('--eps_end', type=float, default=0.1)

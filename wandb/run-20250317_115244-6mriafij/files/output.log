@@ -1,0 +1,21 @@
+  0%|                                                                                                                              | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 152, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 148, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 78, in train
+    state = self.state_transform(obs)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 46, in state_transform
+    state = torch.tensor(state, dtype=torch.float32)
+UnboundLocalError: local variable 'state' referenced before assignment
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 152, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 148, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 78, in train
+    state = self.state_transform(obs)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 46, in state_transform
+    state = torch.tensor(state, dtype=torch.float32)
+UnboundLocalError: local variable 'state' referenced before assignment
