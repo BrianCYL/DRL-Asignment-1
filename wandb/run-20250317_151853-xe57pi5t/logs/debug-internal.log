@@ -1,0 +1,15 @@
+{"time":"2025-03-17T15:18:53.079589118+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/chunyulin/Desktop/DRL/DRL-Asignment-1/wandb/run-20250317_151853-xe57pi5t/logs/debug-core.log"}
+{"time":"2025-03-17T15:18:53.19214664+08:00","level":"INFO","msg":"created new stream","id":"xe57pi5t"}
+{"time":"2025-03-17T15:18:53.192215845+08:00","level":"INFO","msg":"stream: started","id":"xe57pi5t"}
+{"time":"2025-03-17T15:18:53.192285509+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:18:53.192341127+08:00","level":"INFO","msg":"handler: started","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:18:53.192462504+08:00","level":"INFO","msg":"sender: started","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:18:53.620903606+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-17T15:32:52.744635914+08:00","level":"INFO","msg":"stream: closing","id":"xe57pi5t"}
+{"time":"2025-03-17T15:32:52.744692349+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-17T15:32:52.74575038+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-17T15:32:53.481549061+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-17T15:32:53.725282043+08:00","level":"INFO","msg":"handler: closed","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:32:53.725317718+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:32:53.725329829+08:00","level":"INFO","msg":"sender: closed","stream_id":"xe57pi5t"}
+{"time":"2025-03-17T15:32:53.725478519+08:00","level":"INFO","msg":"stream: closed","id":"xe57pi5t"}

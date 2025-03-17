@@ -1,0 +1,66 @@
+  0%|                                                                                                                                             | 0/15000 [00:00<?, ?it/s]/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py:46: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(state, dtype=torch.float32).to(self.device),
+/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py:49: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(next_state, dtype=torch.float32).to(self.device),
+ 21%|███████████████████████████▋                                                                                                      | 3199/15000 [10:40<40:59,  4.80it/s]
+Episode: 100, Average reward: -207.39999999999986, Avg Loss: 231.54847362160683, Epsilon: 0.951217530242334
+Episode: 200, Average reward: -180.59999999999985, Avg Loss: 282.76718708872795, Epsilon: 0.9048147898403269
+Episode: 300, Average reward: -170.49999999999986, Avg Loss: 153.98646509349345, Epsilon: 0.8606756897186528
+Episode: 400, Average reward: -166.14999999999986, Avg Loss: 123.83236052334308, Epsilon: 0.8186898039137951
+Episode: 500, Average reward: -154.09999999999988, Avg Loss: 119.99211787372828, Epsilon: 0.7787520933134615
+Episode: 600, Average reward: -147.5499999999999, Avg Loss: 119.19075668700039, Epsilon: 0.7407626428726788
+Episode: 700, Average reward: -143.4499999999999, Avg Loss: 117.30580643124878, Epsilon: 0.7046264116491338
+Episode: 800, Average reward: -131.0499999999999, Avg Loss: 112.11743280172348, Epsilon: 0.6702529950324074
+Episode: 900, Average reward: -134.39999999999992, Avg Loss: 110.86440945956856, Epsilon: 0.637556398572254
+Episode: 1000, Average reward: -135.7999999999999, Avg Loss: 111.30216289438307, Epsilon: 0.606454822840097
+Episode: 1100, Average reward: -123.39999999999992, Avg Loss: 110.39453512221574, Epsilon: 0.5768704587855094
+Episode: 1200, Average reward: -121.64999999999992, Avg Loss: 113.79324680782855, Epsilon: 0.548729293075715
+Episode: 1300, Average reward: -115.84999999999995, Avg Loss: 118.88597421504556, Epsilon: 0.5219609229311034
+Episode: 1400, Average reward: -111.89999999999992, Avg Loss: 115.9480829552561, Epsilon: 0.49649837999353363
+Episode: 1500, Average reward: -104.84999999999997, Avg Loss: 111.45693622902036, Epsilon: 0.4722779627867691
+Episode: 1600, Average reward: -101.69999999999996, Avg Loss: 117.97617529697716, Epsilon: 0.44923907734991153
+Episode: 1700, Average reward: -102.34999999999997, Avg Loss: 120.8801877231896, Epsilon: 0.4273240856451275
+Episode: 1800, Average reward: -93.54999999999997, Avg Loss: 118.46509522482752, Epsilon: 0.406478161360422
+Episode: 1900, Average reward: -89.24999999999996, Avg Loss: 114.61887022562325, Epsilon: 0.3866491527467055
+Episode: 2000, Average reward: -87.39999999999998, Avg Loss: 111.80181545194239, Epsilon: 0.3677874521460121
+Episode: 2100, Average reward: -84.24999999999996, Avg Loss: 111.01402709335089, Epsilon: 0.34984587188445015
+Episode: 2200, Average reward: -76.4, Avg Loss: 110.49782127343119, Epsilon: 0.3327795262194029
+Episode: 2300, Average reward: -77.1, Avg Loss: 111.5883965203166, Epsilon: 0.31654571904563433
+Episode: 2400, Average reward: -74.5, Avg Loss: 112.21803803391755, Epsilon: 0.3011038370793723
+Episode: 2500, Average reward: -67.8, Avg Loss: 111.21689554549754, Epsilon: 0.28641524825313086
+Episode: 2600, Average reward: -67.2, Avg Loss: 109.9726029452309, Epsilon: 0.27244320506708813
+Episode: 2700, Average reward: -65.40000000000002, Avg Loss: 109.46841020096093, Epsilon: 0.25915275265522114
+Episode: 2800, Average reward: -64.7, Avg Loss: 111.19732720494271, Epsilon: 0.24651064133620196
+Episode: 2900, Average reward: -55.60000000000003, Avg Loss: 111.88442605361342, Epsilon: 0.23448524343027585
+Episode: 3000, Average reward: -61.85000000000001, Avg Loss: 111.61526536304504, Epsilon: 0.22304647413401948
+Episode: 3100, Average reward: -61.20000000000002, Avg Loss: 112.02685428414493, Epsilon: 0.21216571625502262
+Episode: 3200, Average reward: -54.850000000000016, Avg Loss: 110.55700451444835, Epsilon: 0.2018157486181985
+Episode: 3300, Average reward: -54.30000000000002, Avg Loss: 111.2402815534547, Epsilon: 0.1919706779646106
+Episode: 3400, Average reward: -51.80000000000002, Avg Loss: 111.78018259689212, Epsilon: 0.1826058741724434
+Episode: 3500, Average reward: -48.40000000000002, Avg Loss: 110.90590671360492, Epsilon: 0.17369790863805412
+Episode: 3600, Average reward: -45.65000000000002, Avg Loss: 111.60508028183132, Epsilon: 0.1652244956629483
+Episode: 3700, Average reward: -47.20000000000002, Avg Loss: 111.96017203126102, Epsilon: 0.1571644367000449
+Episode: 3800, Average reward: -41.90000000000002, Avg Loss: 112.58948901629076, Epsilon: 0.1494975673197442
+Episode: 3900, Average reward: -40.00000000000002, Avg Loss: 112.00974224193021, Epsilon: 0.1422047067631241
+Episode: 4000, Average reward: -39.70000000000002, Avg Loss: 111.704575204961, Epsilon: 0.13526760995605422
+Episode: 4100, Average reward: -40.00000000000002, Avg Loss: 110.23084982249885, Epsilon: 0.12866892186418147
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 153, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 149, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 93, in train
+    s, a, r, ns, d = self.memory.sample(self.batch_size)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py", line 60, in sample
+    torch.stack(reward),  # Shape: (batch_size,)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 153, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 149, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 93, in train
+    s, a, r, ns, d = self.memory.sample(self.batch_size)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/utils.py", line 60, in sample
+    torch.stack(reward),  # Shape: (batch_size,)
+KeyboardInterrupt

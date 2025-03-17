@@ -1,0 +1,21 @@
+  0%|                                                                                                                                             | 0/15000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 155, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 151, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 80, in train
+    state = self.state_transform(obs)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 47, in state_transform
+    guess_gs = torch.max(obs[2:6]) + 1
+TypeError: max(): argument 'input' (position 1) must be Tensor, not tuple
+Traceback (most recent call last):
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 155, in <module>
+    main()
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 151, in main
+    trainer.train(args)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 80, in train
+    state = self.state_transform(obs)
+  File "/home/chunyulin/Desktop/DRL/DRL-Asignment-1/train.py", line 47, in state_transform
+    guess_gs = torch.max(obs[2:6]) + 1
+TypeError: max(): argument 'input' (position 1) must be Tensor, not tuple
