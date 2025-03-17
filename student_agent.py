@@ -9,14 +9,14 @@ import argparse
 
 agent = DQNAgent(13, 6)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-agent.Q.load_state_dict(torch.load("checkpoints/model_state_transform.pth", map_location=device))
+agent.Q.load_state_dict(torch.load("checkpoints/model_no_state_transform.pth", map_location=device))
 agent.Q.to(device)
 
 def state_transform(obs):
-    binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
-    obstacle_value = int(binary_string, 2)  # Convert binary string to integer
-    state = obs[:10] + (obstacle_value,) + obs[14:]
-    state = torch.tensor(state, dtype=torch.float32)
+    # binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
+    # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
+    # state = obs[:10] + (obstacle_value,) + obs[14:]
+    state = torch.tensor(obs, dtype=torch.float32)
     return state
 
 def get_action(obs):

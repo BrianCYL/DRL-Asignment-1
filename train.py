@@ -33,13 +33,13 @@ class DQNAgentTrainer:
         self.tau = args.tau
         self.agent = DQNAgent(args.state_size, args.action_size)
         self.optimizer = optim.SGD(self.agent.Q.parameters(), lr=args.alpha)
-        self.criterion = nn.SmoothL1Loss()
+        self.criterion = nn.MSELoss()
         self.memory = ReplayBuffer(args.buffer_size, self.device)
         self.batch_size = args.batch_size
         self.n_episodes = args.n_episode
         self.update_step = args.update_step
     
-    def state_transform(self, obs, grid_size=5):
+    def state_transform(self, obs):
         binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
         obstacle_value = int(binary_string, 2)  # Convert binary string to integer
         state = obs[:10] + (obstacle_value,) + obs[14:]
@@ -60,14 +60,14 @@ class DQNAgentTrainer:
     def train(self, args):
         if args.use_wandb:
             wandb.login()
-            wandb.init(project=args.wandb_project, config=args, name=f"{args.wandb_run_name}_fuel_limit_100")
+            wandb.init(project=args.wandb_project, config=args, name=f"{args.wandb_run_name}")
             wandb.watch(self.agent.Q)
 
         self.agent.Q.to(self.device)
         self.agent.target_Q.to(self.device)
         reward_per_episode = [] 
         # env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
-        env = SimpleTaxiEnv(grid_size=5, fuel_limit=100)
+        env = SimpleTaxiEnv(grid_size=5, fuel_limit=50)
         loss_per_episode = []
         for episode in tqdm(range(self.n_episodes)):
             # if (episode + 1) % 100 == 0:
@@ -123,7 +123,7 @@ class DQNAgentTrainer:
             
         if not os.path.exists('checkpoints/'):
             os.makedirs('checkpoints/')
-        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_state_transform.pth')
+        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_no_state_transform.pth')
 
 def main():
     parser = argparse.ArgumentParser()
