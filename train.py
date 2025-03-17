@@ -43,7 +43,7 @@ class DQNAgentTrainer:
         # binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
         # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
         # state = obs[:10] + (obstacle_value,) + obs[14:]
-        state = torch.tensor(state, dtype=torch.float32)
+        state = torch.tensor(obs, dtype=torch.float32)
         return state
     
     def update(self, state, action, target):
@@ -67,7 +67,7 @@ class DQNAgentTrainer:
         self.agent.target_Q.to(self.device)
         reward_per_episode = [] 
         # env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
-        env = SimpleTaxiEnv(grid_size=5, fuel_limit=50)
+        env = SimpleTaxiEnv()
         loss_per_episode = []
         for episode in tqdm(range(self.n_episodes)):
             # if (episode + 1) % 100 == 0:
