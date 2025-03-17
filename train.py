@@ -123,7 +123,7 @@ class DQNAgentTrainer:
             
         if not os.path.exists('checkpoints/'):
             os.makedirs('checkpoints/')
-        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_no_state_transform.pth')
+        torch.save(self.agent.Q.state_dict(), f'checkpoints/model_eps_001.pth')
 
 def main():
     parser = argparse.ArgumentParser()
