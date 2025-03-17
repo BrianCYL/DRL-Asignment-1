@@ -66,12 +66,12 @@ class DQNAgentTrainer:
         self.agent.Q.to(self.device)
         self.agent.target_Q.to(self.device)
         reward_per_episode = [] 
-        # env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
+        env = SimpleTaxiEnv(grid_size=np.random.randint(5, 11))
         env = SimpleTaxiEnv()
         loss_per_episode = []
         for episode in tqdm(range(self.n_episodes)):
-            # if (episode + 1) % 100 == 0:
-            #     env = SimpleTaxiEnv(grid_size=np.random.randint(5, 10))
+            if (episode + 1) % 100 == 0:
+                env = SimpleTaxiEnv(grid_size=np.random.randint(5, 11))
             obs, _ = env.reset()
 
             with torch.no_grad():
@@ -137,7 +137,7 @@ def main():
     parser.add_argument('--buffer_size', type=int, default=10000)
     parser.add_argument('--batch_size', type=int, default=128)
     parser.add_argument('--update_step', type=int, default=100)
-    parser.add_argument('--decay_rate', type=float, default=0.999)
+    parser.add_argument('--decay_rate', type=float, default=0.9995)
     parser.add_argument('--gamma', type=float, default=0.99)
     parser.add_argument('--alpha', type=float, default=1e-4)
     parser.add_argument('--tau', type=float, default=0.3)
