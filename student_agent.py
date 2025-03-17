@@ -12,7 +12,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 agent.Q.load_state_dict(torch.load("checkpoints/model_norm_gs.pth", map_location=device))
 agent.Q.to(device)
 
-def state_transform(self, obs):
+def state_transform(obs):
     # binary_string = ''.join(str(x) for x in obs[10:14])  # Convert tensor to binary string
     # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
     # state = obs[:10] + (obstacle_value,) + obs[14:]
