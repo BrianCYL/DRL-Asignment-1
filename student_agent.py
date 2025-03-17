@@ -17,7 +17,7 @@ def state_transform(self, obs):
     # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
     # state = obs[:10] + (obstacle_value,) + obs[14:]
     state = torch.tensor(obs, dtype=torch.float32)
-    guess_gs = torch.max(obs[2:6]) + 1
+    guess_gs = torch.max(state[2:6]) + 1
     state[:10] /= guess_gs
     return state
 

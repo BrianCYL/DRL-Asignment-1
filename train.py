@@ -44,7 +44,7 @@ class DQNAgentTrainer:
         # obstacle_value = int(binary_string, 2)  # Convert binary string to integer
         # state = obs[:10] + (obstacle_value,) + obs[14:]
         state = torch.tensor(obs, dtype=torch.float32)
-        guess_gs = torch.max(obs[2:6]) + 1
+        guess_gs = torch.max(state[2:6]) + 1
         state[:10] /= guess_gs
         return state
     
@@ -133,7 +133,6 @@ def main():
     parser.add_argument('--wandb_run_name', type=str, default='dqn')
     parser.add_argument('--state_size', type=int, default=16)
     parser.add_argument('--action_size', type=int, default=6)
-    parser.add_argument('--num_grid_size', type=int, default=6)
     parser.add_argument('--eps_start', type=float, default=1.0)
     parser.add_argument('--eps_end', type=float, default=0.1)
     parser.add_argument('--n_episode', type=int, default=10000)
