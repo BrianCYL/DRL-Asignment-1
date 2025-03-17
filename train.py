@@ -84,7 +84,7 @@ class DQNAgentTrainer:
             while not done:
                 action = self.agent.select_action(state.to(self.device), epsilon=self.epsilon)
                 next_obs, reward, done, _ = env.step(action)
-                next_state = self.state_transform(next_obs, env.grid_size)
+                next_state = self.state_transform(next_obs)
                 self.memory.push(state, action, reward, next_state, done)
                 state = next_state
                 total_reward += reward
