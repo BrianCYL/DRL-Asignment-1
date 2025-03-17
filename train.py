@@ -75,7 +75,7 @@ class DQNAgentTrainer:
             obs, _ = env.reset()
 
             with torch.no_grad():
-                state = self.state_transform(obs, env.grid_size)
+                state = self.state_transform(obs)
                 # state = torch.tensor(obs, dtype=torch.float32)
             done = False
             total_reward = 0          
